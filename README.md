@@ -115,6 +115,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 7. Jalankan ini:
 
    ```bash
+   cd ..
    cd frontend
    git checkout uat
    npm install
@@ -122,14 +123,14 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
 
-8. Jalankan "npm install" di folder backend & frontend
-9. Jalankan:
+8. Jalankan:
 
    ```bash
+   cd ..
    make dev
    ```
 
-   → otomatis update repo + jalankan container
+   → Pindah ke root folder, kemudian jalankan container
 
 ---
 
