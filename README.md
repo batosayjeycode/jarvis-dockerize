@@ -34,7 +34,7 @@ project-root/
 
 ### Development Mode
 
-Menjalankan backend, frontend, worker dengan **hot reload** (mount volume ke host).
+Menjalankan backend, frontend, worker dengan **hot reload** (mount volume ke host)
 
 ```bash
 make dev
@@ -63,34 +63,35 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
 ## ✅ Rekomendasi Workflow
 
-1. Install Docker di local.
-2. Clone repo jarvis-api, lalu timpa isi file yang ada di folder backend
-3. Clone repo jarvis-web, lalu timpa isi file yang ada di folder frontend
-4. Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
-5. Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
-6. Lakukan
+1. Install Docker di local
+1. Git clone repo ini di branch "feature/dockerize"
+1. Clone repo jarvis-api, lalu timpa isi file yang ada di folder backend
+1. Clone repo jarvis-web, lalu timpa isi file yang ada di folder frontend
+1. Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
+1. Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
+1. Lakukan
 
    ```bash
    node -v
    ```
 
-   → pastikan menggunakan node versi "v16.14.2".
+   → pastikan menggunakan node versi "**v16.14.2**"
 
-7. Jalankan "npm install" di folder backend & frontend.
-8. Jalankan:
+1. Jalankan "npm install" di folder backend & frontend
+1. Jalankan:
 
    ```bash
    make dev
    ```
 
-   → otomatis update repo + jalankan container.
+   → otomatis update repo + jalankan container
 
 ---
 
 ⚡ Dengan setup ini:
 
-- Redis & RabbitMQ hanya internal (lebih aman).
-- Backend & Frontend bisa auto update dari branch `uat`.
-- Development & Production environment bisa dipilih dengan mudah.
+- Redis & RabbitMQ hanya internal (lebih aman)
+- Backend & Frontend bisa auto update dari branch `uat`
+- Development & Production environment bisa dipilih dengan mudah
 
 ---
