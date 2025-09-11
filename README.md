@@ -64,12 +64,37 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 ## ✅ Rekomendasi Workflow
 
 1. Install Docker di local
-1. Git clone repo ini di branch "feature/dockerize"
-1. Clone repo jarvis-api, lalu timpa isi file yang ada di folder backend
-1. Clone repo jarvis-web, lalu timpa isi file yang ada di folder frontend
-1. Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
-1. Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
-1. Cek node version dengan menjalankan ini:
+2. Jalankan ini:
+
+   ```bash
+   git clone git@github.com:batosayjeycode/jarvis-dockerize.git
+   cd jarvis-dockerize
+   git checkout feature/dockerize
+   ```
+
+   → Ini adalah clone repo ini, lalu pindah ke folder clone, lalu pilih branch "feature/dockerize"
+
+3. Jalankan ini:
+
+   ```bash
+   git clone git@bitbucket.org:Sociolla/jarvis-api.git backend-temp
+   rsync -av backend-temp/ backend/
+   rm -rf backend-temp
+   ```
+
+   → Ini adalah clone repo jarvis-api, lalu timpa isi file yang ada di folder backend
+
+4. Jalankan ini:
+
+   ```bash
+   git clone git@bitbucket.org:Sociolla/jarvis-web.git frontend-temp
+   rsync -av frontend-temp/ frontend/
+   rm -rf frontend-temp
+   ```
+
+   → Ini adalah clone repo jarvis-web, lalu timpa isi file yang ada di folder frontend
+
+5. Cek node version dengan menjalankan ini:
 
    ```bash
    node -v
@@ -77,8 +102,28 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    → pastikan menggunakan node versi "**v16.14.2**"
 
-1. Jalankan "npm install" di folder backend & frontend
-1. Jalankan:
+6. Jalankan ini:
+
+   ```bash
+   cd backend
+   git checkout uat
+   npm install
+   ```
+
+   Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
+
+7. Jalankan ini:
+
+   ```bash
+   cd frontend
+   git checkout uat
+   npm install
+   ```
+
+   Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
+
+8. Jalankan "npm install" di folder backend & frontend
+9. Jalankan:
 
    ```bash
    make dev
