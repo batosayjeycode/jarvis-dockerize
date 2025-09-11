@@ -78,10 +78,9 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    ```bash
    git clone git@github.com:batosayjeycode/jarvis-dockerize.git
    cd jarvis-dockerize
-   git checkout feature/dockerize
    ```
 
-   → Ini adalah clone repo ini, lalu pindah ke folder clone, lalu pilih branch "feature/dockerize"
+   → Ini adalah clone repo ini, lalu pindah ke folder clone
 
 3. Jalankan ini:
 
