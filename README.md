@@ -131,6 +131,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    ```
 
    Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js".
+
    Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
 
 8. Jalankan:
