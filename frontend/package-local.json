@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "serve": "vue-cli-service serve --port 8081"
+    "serve": "vite --port 8080 --host 0.0.0.0"
   }
 }

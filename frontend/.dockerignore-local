@@ -1,0 +1,6 @@
+Remove this list on file .dockerignore
+
+---------------------
+package.json
+package-lock.json
+---------------------
