@@ -48,9 +48,10 @@ Akses:
 
 ## 📜 Makefile Commands
 
-| Command    | Deskripsi                                  |
-| ---------- | ------------------------------------------ |
-| `make dev` | Jalankan container di mode **development** |
+| Command        | Deskripsi                                  |
+| -------------- | ------------------------------------------ |
+| `make dev`     | Jalankan container di mode **development** |
+| `make dev-new` | untuk Docker version terbaru               |
 
 ---
 
@@ -129,13 +130,33 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    npm install
    ```
 
-   Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
+   Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js".
+   Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
 
 8. Jalankan:
 
    ```bash
+   docker pull redis:6
+   docker pull rabbitmq:3-management
+   docker pull node:16.14.2-alpine
+   ```
+
+   → Ini dilakukan untuk download image Docker yang digunakan terlebih dahulu. Image ini digunakan di file docker-compose.dev.yml dan Dockerfile
+
+9. Jalankan:
+
+   untuk Docker version lama, menggunakan perintah `docker-compose`. Jalankan ini:
+
+   ```bash
    cd ..
    make dev
+   ```
+
+   atau untuk Docker version terbaru, menggunakan perintah `docker compose`, bukan `docker-compose`. Jalankan ini:
+
+   ```bash
+   cd ..
+   make dev-new
    ```
 
    → Pindah ke root folder, kemudian jalankan container

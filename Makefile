@@ -15,3 +15,9 @@ dev: update-backend-uat update-frontend-uat
 
 prod: update-backend-master update-frontend-master
 	docker-compose -f docker-compose.dev.yml up --build
+
+dev-new: update-backend-uat update-frontend-uat
+	docker compose -f docker-compose.dev.yml up --build
+
+prod-new: update-backend-master update-frontend-master
+	docker compose -f docker-compose.dev.yml up --build
