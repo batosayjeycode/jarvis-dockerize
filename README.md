@@ -1,9 +1,4 @@
-# jarvis-dockerize
-
-Dockerize Jarvis Web
-
-```markdown
-# 📘 Project Setup with Docker Compose
+# 📘 Project Setup for Dockerize Jarvis Web
 
 ## 🚀 Project Overview
 
@@ -21,6 +16,7 @@ Tambahan service internal:
 ---
 
 ## 📂 Struktur Folder
+
 ```
 
 project-root/
@@ -30,17 +26,19 @@ project-root/
 ├── Makefile # shortcut command
 └── README.md
 
-````
+```
 
 ---
 
 ## 🐳 Docker Compose
 
 ### Development Mode
+
 Menjalankan backend, frontend, worker dengan **hot reload** (mount volume ke host).
+
 ```bash
 make dev
-````
+```
 
 Akses:
 
@@ -95,7 +93,4 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 - Backend & Frontend bisa auto update dari branch `uat`.
 - Development & Production environment bisa dipilih dengan mudah.
 
-```
-
 ---
-```
