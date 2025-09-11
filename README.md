@@ -43,7 +43,7 @@ make dev
 Akses:
 
 - Frontend → [http://localhost:8084](http://localhost:8084)
-- Backend → [http://localhost:5000](http://localhost:5000)
+- Backend → [http://localhost:7002](http://localhost:7002)
 - Rabbitmq → [http://localhost:15674](http://localhost:15674)
 
 ## 📜 Makefile Commands
