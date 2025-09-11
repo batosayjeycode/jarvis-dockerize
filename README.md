@@ -42,9 +42,9 @@ make dev
 
 Akses:
 
-- Frontend → [http://localhost:8083](http://localhost:8083)
+- Frontend → [http://localhost:8084](http://localhost:8084)
 - Backend → [http://localhost:5000](http://localhost:5000)
-- Rabbitmq → [http://localhost:15673](http://localhost:15673)
+- Rabbitmq → [http://localhost:15674](http://localhost:15674)
 
 ## 📜 Makefile Commands
 
@@ -57,7 +57,7 @@ Akses:
 
 ## 🛠 Logs & Debugging
 
-Lalu buka [http://localhost:15673](http://localhost:15672)
+Lalu buka [http://localhost:15674](http://localhost:15674)
 (default login: `guest` / `guest`).
 
 ---
@@ -78,29 +78,30 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    ```bash
    git clone git@github.com:batosayjeycode/jarvis-dockerize.git
    cd jarvis-dockerize
+   git checkout feature/sanctum-dockerize
    ```
 
-   → Ini adalah clone repo ini, lalu pindah ke folder clone
+   → Ini adalah clone repo ini, lalu pindah ke folder clone, kemudian pilih brand "feature/sanctum-dockerize"
 
 3. Jalankan ini:
 
    ```bash
-   git clone git@bitbucket.org:Sociolla/jarvis-api.git backend-temp
+   git clone git@bitbucket.org:Sociolla/sanctum-api.git backend-temp
    rsync -av backend-temp/ backend/
    rm -rf backend-temp
    ```
 
-   → Ini adalah clone repo jarvis-api, lalu timpa isi file yang ada di folder backend
+   → Ini adalah clone repo sanctum-api, lalu timpa isi file yang ada di folder backend
 
 4. Jalankan ini:
 
    ```bash
-   git clone git@bitbucket.org:Sociolla/jarvis-web.git frontend-temp
+   git clone git@bitbucket.org:Sociolla/sanctum-web.git frontend-temp
    rsync -av frontend-temp/ frontend/
    rm -rf frontend-temp
    ```
 
-   → Ini adalah clone repo jarvis-web, lalu timpa isi file yang ada di folder frontend
+   → Ini adalah clone repo sanctum-web, lalu timpa isi file yang ada di folder frontend
 
 5. Cek node version dengan menjalankan ini:
 
@@ -115,8 +116,9 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    ```bash
    cd backend
    git checkout uat
-   npm install
    ```
+
+   Tidak perlu melakukan "npm install" di local folder backend karena sudah ditambahkan "npm install" pada file "Makefile"
 
    Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
 
@@ -126,10 +128,13 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    cd ..
    cd frontend
    git checkout uat
-   npm install
    ```
 
+   Tidak perlu melakukan "npm install" di local folder frontend (karna tidak support untuk copy paste folder node_modules), ini akan dilakukan di dalam Dockerfile di container
+
    Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js".
+
+   Cek file "config/web.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/web-local.env.js".
 
    Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
 
