@@ -11,9 +11,9 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
-    container_name: backend
+    container_name: sanctum_backend
     ports:
-      - "8990:8989"
+      - "7002:7001"
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -31,11 +31,12 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
+    container_name: sanctum_worker
     volumes:
       - ./backend:/usr/src/app
       - ./backend/node_modules:/usr/src/app/node_modules
     working_dir: /usr/src/app
-    command: node app/workers/export-data-jarvis/index.js
+    command: npx ts-node src/workers/export-data/index.ts
     environment:
       - REDIS_HOST=redis
       - RABBITMQ_HOST=rabbitmq
@@ -49,9 +50,9 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
-    container_name: frontend
+    container_name: sanctum_frontend
     ports:
-      - "8083:8081"
+      - "8084:8080"
     volumes:
       - ./frontend:/app
       - /app/node_modules
@@ -62,16 +63,16 @@ services:
 
   redis:
     image: redis:6
-    container_name: redis
+    container_name: sanctum_redis
     restart: unless-stopped
     networks:
       - internal-net
 
   rabbitmq:
     image: rabbitmq:3-management
-    container_name: rabbitmq
+    container_name: sanctum_rabbitmq
     ports:
-      - "15673:15672"
+      - "15674:15672"
     restart: unless-stopped
     networks:
       - internal-net
