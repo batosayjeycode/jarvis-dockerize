@@ -1,0 +1,77 @@
+version: "3.9"
+
+networks:
+  internal-net:
+    driver: bridge
+  public-net:
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: backend
+    ports:
+      - "8990:8989"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - REDIS_HOST=redis
+      - RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - redis
+      - rabbitmq
+    networks:
+      - internal-net
+      - public-net
+
+  worker-export-data:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./backend:/usr/src/app
+      - ./backend/node_modules:/usr/src/app/node_modules
+    working_dir: /usr/src/app
+    command: node app/workers/export-data-jarvis/index.js
+    environment:
+      - REDIS_HOST=redis
+      - RABBITMQ_HOST=rabbitmq
+    depends_on:
+      - redis
+      - rabbitmq
+    networks:
+      - internal-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: frontend
+    ports:
+      - "8083:8081"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - public-net
+
+  redis:
+    image: redis:6
+    container_name: redis
+    restart: unless-stopped
+    networks:
+      - internal-net
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "15673:15672"
+    restart: unless-stopped
+    networks:
+      - internal-net
