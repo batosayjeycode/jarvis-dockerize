@@ -63,7 +63,15 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
 ## ✅ Rekomendasi Workflow
 
-1. Install Docker di local
+1. Install Docker dan Git di local. Jalankan cek version ini:
+
+   ```bash
+   docker -v
+   git -v
+   ```
+
+   → Pastikan Docker dan Git sudah terinstall di local
+
 2. Jalankan ini:
 
    ```bash
