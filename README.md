@@ -84,7 +84,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
    git checkout feature/sanctum-dockerize
    ```
 
-   → Ini adalah clone repo ini, lalu pindah ke folder clone, kemudian pilih brand "feature/sanctum-dockerize"
+   → Ini adalah clone repo ini, lalu pindah ke folder clone, kemudian pilih branch "feature/sanctum-dockerize"
 
 3. Jalankan ini:
 
