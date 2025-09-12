@@ -1,0 +1,7 @@
+FROM node:16.14.2-alpine
+
+WORKDIR /app
+COPY package*.json ./
+COPY node_modules ./node_modules
+
+CMD ["node", "./send-email/index.js"]
