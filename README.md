@@ -145,11 +145,13 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    Tidak perlu melakukan "npm install" di local folder frontend (karna tidak support untuk copy paste folder node_modules), ini akan dilakukan di dalam Dockerfile di container
 
-   Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js".
+   Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js"
 
-   Cek file "config/web.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/web-local.env.js".
+   Cek file "config/web.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/web-local.env.js"
 
-   Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
+   Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json"
+
+   Cek juga di file ".dockerignore", lalu sesuaikan isinya dengan yang ada di file ".dockerignore-local"
 
 9. Jalankan ini:
 
