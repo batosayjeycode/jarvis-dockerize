@@ -37,7 +37,7 @@ project-root/
 Menjalankan backend, frontend, worker dengan **hot reload** (mount volume ke host)
 
 ```bash
-make dev
+make uat
 ```
 
 Akses:
@@ -48,10 +48,12 @@ Akses:
 
 ## 📜 Makefile Commands
 
-| Command        | Deskripsi                                  |
-| -------------- | ------------------------------------------ |
-| `make dev`     | Jalankan container di mode **development** |
-| `make dev-new` | untuk Docker version terbaru               |
+| Command           | Deskripsi                                  |
+| ----------------- | ------------------------------------------ |
+| `make uat`        | Jalankan container di mode **development** |
+| `make uat-new`    | untuk Docker version terbaru               |
+| `make master`     | Jalankan container di mode **prod**        |
+| `make master-new` | untuk Docker version terbaru               |
 
 ---
 
@@ -116,7 +118,6 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    ```bash
    cd backend
    git checkout uat
-   npm install
    ```
 
    Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
@@ -127,7 +128,6 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    cd ..
    cd frontend
    git checkout uat
-   npm install
    ```
 
    Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js".
@@ -150,14 +150,14 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    ```bash
    cd ..
-   make dev
+   make uat
    ```
 
    atau untuk Docker version terbaru, menggunakan perintah `docker compose`, bukan `docker-compose`. Jalankan ini:
 
    ```bash
    cd ..
-   make dev-new
+   make uat-new
    ```
 
    → Pindah ke root folder, kemudian jalankan container
