@@ -5,7 +5,7 @@
 Project ini terdiri dari **3 service utama**:
 
 - **Backend** → Node.js Express
-- **Frontend** → Vue.js 2
+- **Frontend** → Vue.js 3
 - **Worker** → RabbitMQ consumer di dalam folder backend
 
 Tambahan service internal:
@@ -22,6 +22,7 @@ Tambahan service internal:
 project-root/
 ├── backend/ # repo backend (bitbucket branch uat)
 ├── frontend/ # repo frontend (bitbucket branch uat)
+├── workers/ # repo workers (bitbucket branch master)
 ├── docker-compose.dev.yml # config untuk development
 ├── Makefile # shortcut command
 └── README.md
