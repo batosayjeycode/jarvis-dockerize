@@ -37,7 +37,7 @@ project-root/
 Menjalankan backend, frontend, worker dengan **hot reload** (mount volume ke host)
 
 ```bash
-make dev
+make uat
 ```
 
 Akses:
@@ -48,10 +48,12 @@ Akses:
 
 ## 📜 Makefile Commands
 
-| Command        | Deskripsi                                  |
-| -------------- | ------------------------------------------ |
-| `make dev`     | Jalankan container di mode **development** |
-| `make dev-new` | untuk Docker version terbaru               |
+| Command           | Deskripsi                                  |
+| ----------------- | ------------------------------------------ |
+| `make uat`        | Jalankan container di mode **development** |
+| `make uat-new`    | untuk Docker version terbaru               |
+| `make master`     | Jalankan container di mode **prod**        |
+| `make master-new` | untuk Docker version terbaru               |
 
 ---
 
@@ -159,6 +161,8 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
 
+   Cek file "send-email/index.js", pada branch master (prod) kita hanya diberikan access readonly di Mongodb, sehingga proses insert / update pada script untuk Mongodb harus di-comment/di nonaktifkan agar proses send email bisa berjalan dengan baik. Sesuaikan isinya dengan yang ada di file "send-email/index-local-prod.js"
+
 10. Jalankan:
 
 ```bash
@@ -175,14 +179,14 @@ docker pull node:16.14.2-alpine
 
     ```bash
     cd ..
-    make dev
+    make uat
     ```
 
     atau untuk Docker version terbaru, menggunakan perintah `docker compose`, bukan `docker-compose`. Jalankan ini:
 
     ```bash
     cd ..
-    make dev-new
+    make uat-new
     ```
 
     → Pindah ke root folder, kemudian jalankan container
