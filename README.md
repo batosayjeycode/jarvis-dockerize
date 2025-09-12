@@ -48,12 +48,16 @@ Akses:
 
 ## 📜 Makefile Commands
 
-| Command           | Deskripsi                                  |
-| ----------------- | ------------------------------------------ |
-| `make uat`        | Jalankan container di mode **development** |
-| `make uat-new`    | untuk Docker version terbaru               |
-| `make master`     | Jalankan container di mode **prod**        |
-| `make master-new` | untuk Docker version terbaru               |
+| Command               | Deskripsi                                                                                        |
+| --------------------- | ------------------------------------------------------------------------------------------------ |
+| `make uat`            | Jalankan container di mode **development** (menjalankan "remove node_modules" dan "npm install") |
+| `make uat-new`        | untuk Docker version terbaru (menjalankan "remove node_modules" dan "npm install")               |
+| `make master`         | Jalankan container di mode **prod** (menjalankan "remove node_modules" dan "npm install")        |
+| `make master-new`     | untuk Docker version terbaru (menjalankan "remove node_modules" dan "npm install")               |
+| `make dev-uat`        | Jalankan container di mode **development**                                                       |
+| `make dev-uat-new`    | untuk Docker version terbaru                                                                     |
+| `make dev-master`     | Jalankan container di mode **prod**                                                              |
+| `make dev-master-new` | untuk Docker version terbaru                                                                     |
 
 ---
 
