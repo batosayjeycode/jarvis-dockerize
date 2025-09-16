@@ -5,7 +5,7 @@ update-frontend-uat:
 	cd frontend && git checkout uat && git pull origin uat
 
 update-backend-master:
-	cd backend && git checkout users/andy/fixing-count-master && git pull origin master && rm -rf node_modules && npm install
+	cd backend && git checkout master && git pull origin master && rm -rf node_modules && npm install
 
 update-frontend-master:
 	cd frontend && git checkout master && git pull origin master
@@ -17,7 +17,7 @@ frontend-uat:
 	cd frontend && git checkout uat && git pull origin uat
 
 backend-master:
-	cd backend && git checkout users/andy/fixing-count-master && git pull origin master
+	cd backend && git checkout master && git pull origin master
 
 frontend-master:
 	cd frontend && git checkout master && git pull origin master
