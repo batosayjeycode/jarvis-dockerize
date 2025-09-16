@@ -180,7 +180,7 @@ docker pull node:16.14.2-alpine
 
 → Ini dilakukan untuk download image Docker yang digunakan terlebih dahulu. Image ini digunakan di file docker-compose.dev.yml dan Dockerfile
 
-11. Jalankan:
+12. Jalankan:
 
     untuk Docker version lama, menggunakan perintah `docker-compose`. Jalankan ini:
 
