@@ -23,10 +23,10 @@ frontend-master:
 	cd frontend && git checkout master && git pull origin master
 
 update-workers:
-	cd workers && git checkout users/andy/disable-insert-mongo-on-prod && git pull origin master && rm -rf node_modules && npm install
+	cd workers && git checkout master && git pull origin master && rm -rf node_modules && npm install
 
 workers:
-	cd workers && git checkout users/andy/disable-insert-mongo-on-prod && git pull origin master
+	cd workers && git checkout master && git pull origin master
 
 uat: update-backend-uat update-frontend-uat update-workers
 	docker-compose -f docker-compose.dev.yml up --build
