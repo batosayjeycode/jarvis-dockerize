@@ -80,7 +80,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    NVM (Node Version Manager) ini digunakan untuk bisa switch ke Node version yang ingin digunakan
 
-3. Jalankan ini:
+2. Jalankan ini:
 
    ```bash
    git clone git@github.com:batosayjeycode/jarvis-dockerize.git
@@ -90,7 +90,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    → Ini adalah clone repo ini, lalu pindah ke folder clone, kemudian pilih branch "feature/sanctum-dockerize"
 
-4. Jalankan ini:
+3. Jalankan ini:
 
    ```bash
    git clone git@bitbucket.org:Sociolla/sanctum-api.git backend-temp
@@ -100,7 +100,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    → Ini adalah clone repo sanctum-api, lalu timpa isi file yang ada di folder backend
 
-5. Jalankan ini:
+4. Jalankan ini:
 
    ```bash
    git clone git@bitbucket.org:Sociolla/sanctum-web.git frontend-temp
@@ -110,7 +110,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    → Ini adalah clone repo sanctum-web, lalu timpa isi file yang ada di folder frontend
 
-6. Jalankan ini:
+5. Jalankan ini:
 
    ```bash
    git clone git@bitbucket.org:Sociolla/workers.git workers-temp
@@ -120,7 +120,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    → Ini adalah clone repo workers, lalu timpa isi file yang ada di folder workers
 
-7. Cek node version dengan menjalankan ini:
+6. Cek node version dengan menjalankan ini:
 
    ```bash
    node -v
@@ -128,7 +128,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    → pastikan menggunakan node versi "**v16.14.2**"
 
-8. Jalankan ini:
+7. Jalankan ini:
 
    ```bash
    cd backend
@@ -139,7 +139,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
 
-9. Jalankan ini:
+8. Jalankan ini:
 
    ```bash
    cd ..
@@ -157,7 +157,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    Cek juga di file ".dockerignore", lalu sesuaikan isinya dengan yang ada di file ".dockerignore-local"
 
-10. Jalankan ini:
+9. Jalankan ini:
 
    ```bash
    cd workers
@@ -170,7 +170,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
 
    Cek file "send-email/index.js", pada branch master (prod) kita hanya diberikan access readonly di Mongodb, sehingga proses insert / update pada script untuk Mongodb harus di-comment/di nonaktifkan agar proses send email bisa berjalan dengan baik. Sesuaikan isinya dengan yang ada di file "send-email/index-local-prod.js"
 
-11. Jalankan:
+10. Jalankan:
 
 ```bash
 docker pull redis:6
@@ -180,7 +180,7 @@ docker pull node:16.14.2-alpine
 
 → Ini dilakukan untuk download image Docker yang digunakan terlebih dahulu. Image ini digunakan di file docker-compose.dev.yml dan Dockerfile
 
-12. Jalankan:
+11. Jalankan:
 
     untuk Docker version lama, menggunakan perintah `docker-compose`. Jalankan ini:
 
