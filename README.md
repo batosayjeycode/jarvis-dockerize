@@ -98,7 +98,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
    rm -rf backend-temp
    ```
 
-   → Ini adalah clone repo sanctum-api, lalu timpa isi file yang ada di folder backend
+   → Ini adalah clone repo sanctum-api, lalu menimpa isi file yang ada di folder backend
 
 4. Jalankan ini:
 
@@ -108,7 +108,7 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
    rm -rf frontend-temp
    ```
 
-   → Ini adalah clone repo sanctum-web, lalu timpa isi file yang ada di folder frontend
+   → Ini adalah clone repo sanctum-web, lalu menimpa isi file yang ada di folder frontend
 
 5. Jalankan ini:
 
@@ -169,6 +169,8 @@ Lalu buka [http://localhost:15674](http://localhost:15674)
    Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
 
    Cek file "send-email/index.js", pada branch master (prod) kita hanya diberikan access readonly di Mongodb, sehingga proses insert / update pada script untuk Mongodb harus di-comment/di nonaktifkan agar proses send email bisa berjalan dengan baik. Sesuaikan isinya dengan yang ada di file "send-email/index-local-prod.js"
+
+   Noted: Jika melakukan git switch branch di folder backend, jangan lupa service "workers" ini di-restart di Docker ya
 
 10. Jalankan:
 
