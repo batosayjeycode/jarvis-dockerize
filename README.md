@@ -83,7 +83,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    NVM (Node Version Manager) ini digunakan untuk bisa switch ke Node version yang ingin digunakan
 
-3. Jalankan ini:
+2. Jalankan ini:
 
    ```bash
    git clone git@github.com:batosayjeycode/jarvis-dockerize.git
@@ -93,7 +93,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    → Ini adalah clone repo ini, lalu pindah ke folder clone, lalu pilih branch "feature/dockerize"
 
-4. Jalankan ini:
+3. Jalankan ini:
 
    ```bash
    git clone git@bitbucket.org:Sociolla/jarvis-api.git backend-temp
@@ -101,9 +101,9 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    rm -rf backend-temp
    ```
 
-   → Ini adalah clone repo jarvis-api, lalu timpa isi file yang ada di folder backend
+   → Ini adalah clone repo jarvis-api, lalu menimpa isi file yang ada di folder backend
 
-5. Jalankan ini:
+4. Jalankan ini:
 
    ```bash
    git clone git@bitbucket.org:Sociolla/jarvis-web.git frontend-temp
@@ -111,9 +111,9 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    rm -rf frontend-temp
    ```
 
-   → Ini adalah clone repo jarvis-web, lalu timpa isi file yang ada di folder frontend
+   → Ini adalah clone repo jarvis-web, lalu menimpa isi file yang ada di folder frontend
 
-6. Cek node version dengan menjalankan ini:
+5. Cek node version dengan menjalankan ini:
 
    ```bash
    node -v
@@ -121,7 +121,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    → pastikan menggunakan node versi "**v16.14.2**"
 
-7. Jalankan ini:
+6. Jalankan ini:
 
    ```bash
    cd backend
@@ -130,7 +130,9 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    Lalu Buat file ".env" di folder backend (copy paste dari .env uat), lalu sesuaikan isinya dengan yang ada di file ".env-local"
 
-8. Jalankan ini:
+   Noted: Jika melakukan git switch branch di folder backend, jangan lupa service "workers" ini di-restart di Docker ya
+
+7. Jalankan ini:
 
    ```bash
    cd ..
@@ -142,7 +144,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
 
-9. Jalankan:
+8. Jalankan:
 
    ```bash
    docker pull redis:6
@@ -152,7 +154,7 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    → Ini dilakukan untuk download image Docker yang digunakan terlebih dahulu. Image ini digunakan di file docker-compose.dev.yml dan Dockerfile
 
-10. Jalankan:
+9. Jalankan:
 
    untuk Docker version lama, menggunakan perintah `docker-compose`. Jalankan ini:
 
