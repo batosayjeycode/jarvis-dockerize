@@ -51,3 +51,6 @@ dev-uat-new: backend-uat frontend-uat workers
 
 dev-master-new: backend-master frontend-master workers
 	docker compose -f docker-compose.dev.yml up --build
+
+dev-now: 
+	docker-compose -f docker-compose.dev.yml up --build
