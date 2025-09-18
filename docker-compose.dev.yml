@@ -36,7 +36,7 @@ services:
       - ./backend:/usr/src/app
       - ./backend/node_modules:/usr/src/app/node_modules
     working_dir: /usr/src/app
-    command: node app/workers/export-data-jarvis/index.js
+    command: nodemon app/workers/export-data-jarvis/index.js
     environment:
       - REDIS_HOST=redis
       - RABBITMQ_HOST=rabbitmq
