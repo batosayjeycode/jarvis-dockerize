@@ -144,6 +144,22 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
 
+   Tambahkan code block "devServer" ini di file "vue.config.js" untuk bisa hot reload di setiap perubahan file. Port "8085" ini adalah port yang di-expose di file "docker-compose.dev.yml" di service "frontend". Sebagai contoh : "8085:8081", port expose adalah "8085".
+
+   ```
+   module.exports = {
+     devServer: {
+       host: '0.0.0.0', // listen di semua interface (wajib di Docker)
+       port: 8085,
+       hot: true, // enable HMR
+       liveReload: true, // reload kalau ada perubahan
+       client: {
+         webSocketURL: 'ws://localhost:8085/ws',
+       },
+     },
+   };
+   ```
+
 8. Jalankan:
 
    ```bash
