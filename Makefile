@@ -1,11 +1,11 @@
 update-backend-uat:
-	cd backend && git checkout uat && git pull origin uat && rm -rf node_modules && npm install
+	cd backend && git checkout uat && git pull origin uat && rm -rf node_modules && npm install && npm install sociolla-core
 
 update-frontend-uat:
 	cd frontend && git checkout uat && git pull origin uat
 
 update-backend-master:
-	cd backend && git checkout master && git pull origin master && rm -rf node_modules && npm install
+	cd backend && git checkout master && git pull origin master && rm -rf node_modules && npm install && npm install sociolla-core
 
 update-frontend-master:
 	cd frontend && git checkout master && git pull origin master
@@ -23,7 +23,7 @@ frontend-master:
 	cd frontend && git checkout master && git pull origin master
 
 update-workers:
-	cd workers && git checkout master && git pull origin master && rm -rf node_modules && npm install
+	cd workers && git checkout master && git pull origin master && rm -rf node_modules && npm install && npm install sociolla-core
 
 workers:
 	cd workers && git checkout master && git pull origin master
