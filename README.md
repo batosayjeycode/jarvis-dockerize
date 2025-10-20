@@ -81,7 +81,8 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    → Pastikan Node.js, NVM(Node Version Manager), Docker dan Git sudah terinstall di local
 
-   NVM (Node Version Manager) ini digunakan untuk bisa switch ke Node version yang ingin digunakan
+   NVM (Node Version Manager) ini digunakan untuk bisa switch ke Node version yang ingin digunakan.
+   Referensi install NVM : https://wi-ki.sociolla.info/nodejs-version-upgrade-complete-guide/how-to-install-nvm-and-node.html (VPN Prod Sociolla)
 
 2. Jalankan ini:
 
@@ -142,6 +143,22 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
    Cek file "config/default.env.js" di folder frontend, lalu sesuaikan isinya dengan yang ada di file "config/default-local.env.js".
 
    Cek juga di file "package.json", lalu sesuaikan isinya dengan yang ada di file "package-local.json".
+
+   Tambahkan code block "devServer" ini di file "vue.config.js" untuk bisa hot reload di setiap perubahan file. Port "8085" ini adalah port yang di-expose di file "docker-compose.dev.yml" di service "frontend". Sebagai contoh : "8085:8081", port expose adalah "8085".
+
+   ```
+   module.exports = {
+     devServer: {
+       host: '0.0.0.0', // listen di semua interface (wajib di Docker)
+       port: 8085,
+       hot: true, // enable HMR
+       liveReload: true, // reload kalau ada perubahan
+       client: {
+         webSocketURL: 'ws://localhost:8085/ws',
+       },
+     },
+   };
+   ```
 
 8. Jalankan:
 
