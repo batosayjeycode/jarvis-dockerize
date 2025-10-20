@@ -81,7 +81,8 @@ Lalu buka [http://localhost:15673](http://localhost:15672)
 
    → Pastikan Node.js, NVM(Node Version Manager), Docker dan Git sudah terinstall di local
 
-   NVM (Node Version Manager) ini digunakan untuk bisa switch ke Node version yang ingin digunakan
+   NVM (Node Version Manager) ini digunakan untuk bisa switch ke Node version yang ingin digunakan.
+   Referensi install NVM : https://wi-ki.sociolla.info/nodejs-version-upgrade-complete-guide/how-to-install-nvm-and-node.html (VPN Prod Sociolla)
 
 2. Jalankan ini:
 
