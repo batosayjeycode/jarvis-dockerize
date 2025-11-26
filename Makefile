@@ -27,6 +27,26 @@ update-frontend-uat:
 	rm -rf node_modules && \
 	npm install
 
+update-backend-master:
+	$(NVM) && \
+	cd backend && \
+	git checkout master && \
+	git pull origin master && \
+	nvm use $(NODE_BACKEND) && \
+	rm -rf node_modules && \
+	npm install && \
+	npm install sociolla-core && \
+	npm install metric-collector
+
+update-frontend-master:
+	$(NVM) && \
+	cd frontend && \
+	git checkout master && \
+	git pull origin master && \
+	nvm use $(NODE_FRONTEND) && \
+	rm -rf node_modules && \
+	npm install
+
 uat: update-backend-uat update-frontend-uat
 	docker-compose -f docker-compose.dev.yml up --build
 
@@ -37,4 +57,16 @@ uat-new: update-backend-uat update-frontend-uat
 	docker compose -f docker-compose.dev.yml up --build
 
 uat-new-dev:
+	docker compose -f docker-compose.dev.yml up --build
+
+master: update-backend-master update-frontend-master
+	docker-compose -f docker-compose.dev.yml up --build
+
+master-dev:
+	docker-compose -f docker-compose.dev.yml up --build
+
+master-new: update-backend-master update-frontend-master
+	docker compose -f docker-compose.dev.yml up --build
+
+master-new-dev:
 	docker compose -f docker-compose.dev.yml up --build
