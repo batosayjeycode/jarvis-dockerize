@@ -17,9 +17,12 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
+    mem_limit: 520m
+    mem_reservation: 400m
     environment:
       - REDIS_HOST=redis
       - RABBITMQ_HOST=rabbitmq
+      - NODE_OPTIONS=--max-old-space-size=400
     depends_on:
       - redis
       - rabbitmq
@@ -35,11 +38,14 @@ services:
     volumes:
       - ./backend:/usr/src/app
       - ./backend/node_modules:/usr/src/app/node_modules
+    mem_limit: 600m
+    mem_reservation: 400m
     working_dir: /usr/src/app
     command: nodemon app/workers/export-data-jarvis/index.js
     environment:
       - REDIS_HOST=redis
       - RABBITMQ_HOST=rabbitmq
+      - NODE_OPTIONS=--max-old-space-size=400
     depends_on:
       - redis
       - rabbitmq
