@@ -5,24 +5,24 @@ NVM := source ~/.nvm/nvm.sh
 
 NODE_BACKEND := 22.15.1
 NODE_FRONTEND := 16.14.2
+GIT_BRANCH := uat
 
-
-update-backend-uat:
+update-backend:
 	$(NVM) && \
 	cd backend && \
-	git checkout uat && \
-	git pull origin uat && \
+	git checkout $(GIT_BRANCH) && \
+	git pull origin $(GIT_BRANCH) && \
 	nvm use $(NODE_BACKEND) && \
 	rm -rf node_modules && \
 	npm install && \
 	npm install sociolla-core && \
 	npm install metric-collector
 
-update-frontend-uat:
+update-frontend:
 	$(NVM) && \
 	cd frontend && \
-	git checkout uat && \
-	git pull origin uat
+	git checkout $(GIT_BRANCH) && \
+	git pull origin $(GIT_BRANCH)
 
 update-workers-master:
 	$(NVM) && \
@@ -35,14 +35,14 @@ update-workers-master:
 	npm install sociolla-core && \
 	npm install metric-collector
 
-uat: update-backend-uat update-frontend-uat update-workers-master
+sanctum: update-backend update-frontend update-workers-master
 	docker-compose -f docker-compose.dev.yml up --build
 
-uat-dev:
+sanctum-dev:
 	docker-compose -f docker-compose.dev.yml up --build
 
-uat-new: update-backend-uat update-frontend-uat update-workers-master
+sanctum-new: update-backend update-frontend update-workers-master
 	docker compose -f docker-compose.dev.yml up --build
 
-uat-new-dev:
+sanctum-new-dev:
 	docker compose -f docker-compose.dev.yml up --build
