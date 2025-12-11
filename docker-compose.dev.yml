@@ -52,6 +52,28 @@ services:
     networks:
       - internal-net
 
+  task-trigger-schedule-job:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: jarvis_task_trigger_schedule_job
+    volumes:
+      - ./backend:/usr/src/app
+      - ./backend/node_modules:/usr/src/app/node_modules
+    mem_limit: 800m
+    mem_reservation: 600m
+    working_dir: /usr/src/app
+    command: nodemon app/tasks/trigger-scheduled-jobs/index.js
+    environment:
+      - REDIS_HOST=redis
+      - RABBITMQ_HOST=rabbitmq
+      - NODE_OPTIONS=--max-old-space-size=600
+    depends_on:
+      - redis
+      - rabbitmq
+    networks:
+      - internal-net
+
   frontend:
     build:
       context: ./frontend
