@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jarvis-worker-export-data
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: jarvis-worker-export-data
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 0
+  revisionHistoryLimit: 5
+  template:
+    metadata:
+      labels:
+        app: jarvis-worker-export-data
+    spec:
+      containers:
+      - name: jarvis-worker-export-data
+        image: IMAGE_NAME_TO_BE_REPLACED
+        env:
+        - name: WORKER
+          value: export-data-jarvis
+        - name: FILE_PATH
+          value: "app/workers/export-data-jarvis/index.js"
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 500m
+            memory: 800Mi
